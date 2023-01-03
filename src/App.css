@@ -3,6 +3,14 @@
   src: url(/src/assets/fonts/Anthares.ttf);
 }
 
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
 .CU-hero--topic {
   font-family: Anthares;
   background: linear-gradient(269.99deg, #ff95bb 21.72%, #b8a6fe 84.54%),
