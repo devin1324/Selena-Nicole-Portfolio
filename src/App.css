@@ -3,22 +3,6 @@
   src: url(/src/assets/fonts/Anthares.ttf);
 }
 
-.CU-hero--container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-}
-
-.CU-hero--bg {
-  grid-area: 1 / 1 / 2 / 2;
-}
-
-.CU-hero--content {
-  grid-area: 1 / 1 / 2 / 2;
-}
-
 .CU-hero--topic {
   font-family: Anthares;
   background: linear-gradient(269.99deg, #ff95bb 21.72%, #b8a6fe 84.54%),
