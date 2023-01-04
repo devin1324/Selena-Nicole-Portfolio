@@ -3,22 +3,37 @@
   src: url(/src/assets/fonts/Anthares.ttf);
 }
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+@font-face {
+  font-family: Anaheim-Regular;
+  src: url(/src/assets/fonts/Anaheim-Regular.ttf);
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-
-.CU-hero--topic {
-  font-family: Anthares;
-  background: linear-gradient(269.99deg, #ff95bb 21.72%, #b8a6fe 84.54%),
-    #d9d9d9;
+.cu--topic-gradiant {
+  background: linear-gradient(270deg, #ff005c 23.14%, #3300ff 100%), #d9d9d9;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  font-weight: 400;
-  /* line-height: 91.49%; */
+}
+
+.cu--about-img-shadow {
+  filter: drop-shadow(-14px 0px 20px rgba(0, 0, 0, 0.32));
+}
+
+.cu-font---anaheim-Regular {
+  font-family: Anaheim-Regular;
+}
+
+.cu--audio-box-shadow {
+  box-shadow: 0px 0px 26px 11px rgba(0, 0, 0, 0.23);
+}
+
+.cu--newReleased-button-shadow {
+  filter: drop-shadow(0 0 0.2rem rgb(228, 195, 201));
 }
