@@ -12,8 +12,10 @@ import { motion } from 'framer-motion';
 //
 //
 
-function Audioplayer() {
-  const [trackIndex, setTrackIndex] = useState(0);
+function Audioplayer(
+  {trackIndex, setTrackIndex}
+) {
+  
   const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioSrc = './music/Song1.mp3';
