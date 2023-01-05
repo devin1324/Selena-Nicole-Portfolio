@@ -37,3 +37,14 @@
 .cu--newReleased-button-shadow {
   filter: drop-shadow(0 0 0.2rem rgb(228, 195, 201));
 }
+
+input[type=range] {
+	height: 5px;
+	-webkit-appearance: none;
+	width: 100%;
+	margin-bottom: 10px;
+	border-radius: 8px;
+	background: #3b7677;
+	transition: background 0.2s ease;
+	cursor: pointer;
+}
