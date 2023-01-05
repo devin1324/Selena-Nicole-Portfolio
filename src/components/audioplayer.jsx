@@ -67,9 +67,9 @@ function Audioplayer() {
     setTrackProgress(audioRef.current.currentTime);
 
     if (isReady.current) {
-        // audioRef.current.play();
+        audioRef.current.play();
         console.log('playing from useeffect')
-      // setIsPlaying(true);
+      setIsPlaying(true);
       startTimer();
     } else {
       console.log('isReady set to true')
