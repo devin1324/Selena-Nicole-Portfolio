@@ -16,7 +16,7 @@ function Audioplayer() {
   const [trackIndex, setTrackIndex] = useState(0);
   const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioSrc = './music/Song3.mp3';
+  const audioSrc = './music/Song1.mp3';
 
   const audioRef = useRef(new Audio('./music/Song2.mp3'));
   const inetervalRef = useRef();
@@ -28,7 +28,7 @@ function Audioplayer() {
     ? `${(trackProgress / duration) * 100}%`
     : '0%';
   const trackStyling = `
-  -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, #fff), color-stop(${currentPercentage}, #777))
+  -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage},  #c58792), color-stop(${currentPercentage}, transparent))
 `;
 
   //
@@ -67,12 +67,12 @@ function Audioplayer() {
     setTrackProgress(audioRef.current.currentTime);
 
     if (isReady.current) {
-        audioRef.current.play();
-        console.log('playing from useeffect')
+      audioRef.current.play();
+      console.log('playing from useeffect');
       setIsPlaying(true);
       startTimer();
     } else {
-      console.log('isReady set to true')
+      console.log('isReady set to true');
       isReady.current = true;
     }
   }, [trackIndex]);
@@ -143,7 +143,40 @@ function Audioplayer() {
   //
   //
   return (
-    <div className=" cu--audio-box-shadow flex flex-row items-end justify-center gap-[1vw] bg-slate-600 w-[80vw] h-[25vh] rounded-[20px] p-[5vw]  mb-[2vh] md:w-[26vw] md:h-[26vw] md:max-w-[400px] md:max-h-[400px]">
+    <div className=" cu--audio-box-shadow flex flex-col  justify-end gap-[3vh] bg-slate-600 w-[80vw] h-[25vh] rounded-[20px] p-[5vw]  mb-[2vh] md:w-[26vw] md:h-[26vw] md:max-w-[400px] md:max-h-[400px]">
+      <div className="flex flex-row justify-center items-end">
+        <motion.button
+          type="button"
+          aria-label="Previous"
+          onClick={handlePrevTrack}
+          whileTap={{ scale: 0.95 }}
+          className="cu--newReleased-button-shadow"
+        >
+          <IoPlaySkipBackCircleSharp size={'2rem'} />
+        </motion.button>
+
+        <motion.button
+          type="button"
+          onClick={handleMusic}
+          whileTap={{ scale: 0.95 }}
+          className="cu--newReleased-button-shadow"
+        >
+          {isPlaying ? (
+            <FaPauseCircle size={'2.5rem'} />
+          ) : (
+            <FaPlayCircle size={'2.5rem'} />
+          )}
+        </motion.button>
+
+        <motion.button
+          type="button"
+          onClick={handleNextTrack}
+          whileTap={{ scale: 0.95 }}
+          className="cu--newReleased-button-shadow"
+        >
+          <IoPlaySkipForwardCircle size={'2rem'} />
+        </motion.button>
+      </div>
       <input
         type="range"
         value={trackProgress}
@@ -155,37 +188,6 @@ function Audioplayer() {
         onKeyUp={onScrubEnd}
         style={{ background: trackStyling }}
       />
-      <motion.button
-        type="button"
-        aria-label="Previous"
-        onClick={handlePrevTrack}
-        whileTap={{ scale: 0.95 }}
-        className="cu--newReleased-button-shadow"
-      >
-        <IoPlaySkipBackCircleSharp size={'2rem'} />
-      </motion.button>
-
-      <motion.button
-        type="button"
-        onClick={handleMusic}
-        whileTap={{ scale: 0.95 }}
-        className="cu--newReleased-button-shadow"
-      >
-        {isPlaying ? (
-          <FaPauseCircle size={'2.5rem'} />
-        ) : (
-          <FaPlayCircle size={'2.5rem'} />
-        )}
-      </motion.button>
-
-      <motion.button
-        type="button"
-        onClick={handleNextTrack}
-        whileTap={{ scale: 0.95 }}
-        className="cu--newReleased-button-shadow"
-      >
-        <IoPlaySkipForwardCircle size={'2rem'} />
-      </motion.button>
     </div>
   );
 }
