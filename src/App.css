@@ -30,24 +30,35 @@
   font-family: Anaheim-Regular;
 }
 
-.cu--audio-box-shadow {
+.cu--audio-box {
   box-shadow: 0px 0px 26px 11px rgba(0, 0, 0, 0.23);
+  background-position: center center;
+  background-size: cover;
 }
 
 .cu--newReleased-button-shadow {
   filter: drop-shadow(0 0 0.2rem #e4c3c9);
 }
 
-input[type=range] {
-	height: 2px;
-	-webkit-appearance: none;
-	width: 100%;
-	border-radius: 3px;
-	background: #ebd8db;
-	transition: background 0.2s ease;
-	cursor: pointer;
+.cu--grid-newReleased {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  gap: 2px;
 }
-input[type="range"]::-webkit-slider-thumb {
+
+input[type='range'] {
+  height: 2px;
+  -webkit-appearance: none;
+  width: 100%;
+  border-radius: 3px;
+  background: #ebd8db;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 5px;
   width: 5px;
@@ -55,13 +66,29 @@ input[type="range"]::-webkit-slider-thumb {
   background: #dbd1d3;
   cursor: ew-resize;
   box-shadow: 0 0 2px 0 #555;
-  transition: background .3s ease-in-out;
+  transition: background 0.3s ease-in-out;
 }
 
-input[type=range]::-webkit-slider-runnable-track  {
+input[type='range']::-moz-slider-thumb {
+  -webkit-appearance: none;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background: #dbd1d3;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background 0.3s ease-in-out;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
   -webkit-appearance: none;
   box-shadow: 0px 0px 6px 1px rgba(245, 235, 235, 0.23);
   border: none;
   background: transparent;
   /* filter: drop-shadow(0 0 0.2rem #e4c3c9); */
+}
+
+.cu--musiclist-thubnail {
+  background-position: center center;
+  background-size: cover;
 }

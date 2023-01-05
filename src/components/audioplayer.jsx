@@ -12,15 +12,18 @@ import { motion } from 'framer-motion';
 //
 //
 
-function Audioplayer(
-  {trackIndex, setTrackIndex}
-) {
-  
+function Audioplayer({
+  trackIndex,
+  setTrackIndex,
+  musicSrc,
+  currentFile,
+  handleTrack,
+}) {
   const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioSrc = './music/Song1.mp3';
+  console.log(currentFile);
 
-  const audioRef = useRef(new Audio('./music/Song2.mp3'));
+  const audioRef = useRef(new Audio(currentFile.track));
   const inetervalRef = useRef();
   const isReady = useRef(false);
 
@@ -65,7 +68,7 @@ function Audioplayer(
   useEffect(() => {
     audioRef.current.pause();
 
-    audioRef.current = new Audio(audioSrc);
+    audioRef.current = new Audio(currentFile.track);
     setTrackProgress(audioRef.current.currentTime);
 
     if (isReady.current) {
@@ -84,8 +87,6 @@ function Audioplayer(
   //
   //
   //
-
-  const arr = 5;
 
   const startTimer = () => {
     clearInterval(inetervalRef.current);
@@ -113,13 +114,15 @@ function Audioplayer(
 
   //   Next music track
   const handleNextTrack = () => {
-    setTrackIndex((trackIndex + 1) % arr);
+    setTrackIndex((trackIndex + 1) % musicSrc.length);
+    handleTrack((trackIndex + 1) % musicSrc.length);
     console.log(trackIndex);
   };
 
   //   Previous music track
   const handlePrevTrack = () => {
-    setTrackIndex((trackIndex - 1 + arr) % arr);
+    setTrackIndex((trackIndex - 1 + musicSrc.length) % musicSrc.length);
+    handleTrack((trackIndex - 1 + musicSrc.length) % musicSrc.length);
     console.log(trackIndex);
   };
 
@@ -145,7 +148,10 @@ function Audioplayer(
   //
   //
   return (
-    <div className=" cu--audio-box-shadow flex flex-col  justify-end gap-[3vh] bg-slate-600 w-[80vw] h-[25vh] rounded-[20px] p-[5vw]  mb-[2vh] md:w-[26vw] md:h-[26vw] md:max-w-[400px] md:max-h-[400px]">
+    <div
+      style={{ backgroundImage: `url(${currentFile.img})` }}
+      className=" cu--audio-box flex flex-col  justify-end gap-[3vh] bg-slate-600 w-[80vw] h-[25vh] rounded-[20px] p-[5vw]  mb-[2vh] md:w-[26vw] md:h-[26vw] md:max-w-[400px] md:max-h-[400px]"
+    >
       <div className="flex flex-row justify-center items-end">
         <motion.button
           type="button"
