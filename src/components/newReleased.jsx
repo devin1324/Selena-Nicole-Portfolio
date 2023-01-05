@@ -68,8 +68,8 @@ function NewReleased() {
         <div className="cu--grid-newReleased w-full h-[50vh] md:w-[50vw] md:h-full p-[2vh]">
           {musicSrc.map((song, i) => (
             <motion.div
-            whileTap={{scale:0.95}}
-            // transition={{duration:0.3}}
+            whileTap={{scale:0.98}}
+            transition={{duration:0.1}}
               key={song.name}
               onClick={() => handleTrack(i)}
               className="cu--musiclist-thubnail rounded-md"
@@ -78,7 +78,6 @@ function NewReleased() {
               <motion.div
                 whileHover={{ opacity: 1 }}
                 whileTap={{ opacity: 1 }}
-                // onClick={}
                 className="opacity-0 backdrop-blur-sm w-full h-full backdrop-opacity-90  flex flex-col justify-center items-center"
               >
                 <h2 className="text-white">{song.name}</h2>
