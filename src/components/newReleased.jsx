@@ -50,7 +50,7 @@ function NewReleased() {
   return (
     <div className="w-full h-[200vh] ">
       <div className="w-full h-[100vh] flex flex-col md:flex-row">
-        <div className="w-full h-[50vh] md:w-[50vw] md:h-full bg-slate-300 flex flex-col justify-end items-center gap-[2vh] md:justify-center">
+        <div className="w-full h-[50vh] md:w-[50vw] md:h-full  flex flex-col justify-end items-center gap-[2vh] md:justify-center">
           <h1 className="cu--topic-gradiant cu-font---anaheim-Regular text-[10vw] text-center md:text-[3vw]">
             NEW RELEASED
           </h1>
@@ -61,15 +61,18 @@ function NewReleased() {
             currentFile={currentFile}
             setCurrentFile={setCurrentFile}
             handleTrack={handleTrack}
+          
           />
         </div>
 
-        <div className="cu--grid-newReleased w-full h-[50vh] md:w-[50vw] md:h-full bg-orange-300">
+        <div className="cu--grid-newReleased w-full h-[50vh] md:w-[50vw] md:h-full p-[2vh]">
           {musicSrc.map((song, i) => (
-            <div
+            <motion.div
+            whileTap={{scale:0.95}}
+            // transition={{duration:0.3}}
               key={song.name}
               onClick={() => handleTrack(i)}
-              className="cu--musiclist-thubnail "
+              className="cu--musiclist-thubnail rounded-md"
               style={{ backgroundImage: `url(${song.coverImage})` }}
             >
               <motion.div
@@ -80,7 +83,7 @@ function NewReleased() {
               >
                 <h2 className="text-white">{song.name}</h2>
               </motion.div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

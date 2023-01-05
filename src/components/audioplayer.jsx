@@ -21,7 +21,6 @@ function Audioplayer({
 }) {
   const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  console.log(currentFile);
 
   const audioRef = useRef(new Audio(currentFile.track));
   const inetervalRef = useRef();
@@ -73,11 +72,9 @@ function Audioplayer({
 
     if (isReady.current) {
       audioRef.current.play();
-      console.log('playing from useeffect');
       setIsPlaying(true);
       startTimer();
     } else {
-      console.log('isReady set to true');
       isReady.current = true;
     }
   }, [trackIndex]);
@@ -116,14 +113,12 @@ function Audioplayer({
   const handleNextTrack = () => {
     setTrackIndex((trackIndex + 1) % musicSrc.length);
     handleTrack((trackIndex + 1) % musicSrc.length);
-    console.log(trackIndex);
   };
 
   //   Previous music track
   const handlePrevTrack = () => {
     setTrackIndex((trackIndex - 1 + musicSrc.length) % musicSrc.length);
     handleTrack((trackIndex - 1 + musicSrc.length) % musicSrc.length);
-    console.log(trackIndex);
   };
 
   const onScrub = (value) => {
@@ -150,8 +145,9 @@ function Audioplayer({
   return (
     <div
       style={{ backgroundImage: `url(${currentFile.img})` }}
-      className=" cu--audio-box flex flex-col  justify-end gap-[3vh] bg-slate-600 w-[80vw] h-[25vh] rounded-[20px] p-[5vw]  mb-[2vh] md:w-[26vw] md:h-[26vw] md:max-w-[400px] md:max-h-[400px]"
+      className=" cu--audio-box flex flex-col items-center justify-end gap-[3vh] bg-slate-600 w-[80vw] h-[25vh] rounded-[20px] p-[5vw]  mb-[2vh] md:w-[26vw] md:h-[26vw] md:max-w-[400px] md:max-h-[400px]"
     >
+      <h1 className="text-white">{musicSrc[trackIndex].name}</h1>
       <div className="flex flex-row justify-center items-end">
         <motion.button
           type="button"
