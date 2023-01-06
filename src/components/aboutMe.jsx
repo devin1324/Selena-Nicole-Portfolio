@@ -19,9 +19,9 @@ function AboutMe() {
 
 
       <div className="w-full h-[50vh] md:w-[50vw] md:h-full md:flex md:pt-[20vh] ">
-          <img src="/public/aboutme/card-1.jpg" alt="card-1"  className='cu--about-img-shadow absolute w-[80vw] h-[30vh] object-cover rounded-[20px] ml-[5vw] mt-[5vw] md:w-[35vw] md:ml-[2vw] md:mt-[2vw]  md:h-[40vh]'/>
-          <img src="/public/aboutme/card-2.jpg" alt="card-1"  className='absolute w-[80vw] h-[30vh] object-cover rounded-[20px] ml-[10vw] mt-[10vw] md:w-[35vw] md:ml-[6vw] md:mt-[6vw]  md:h-[40vh]'/>
-          <img src="/public/aboutme/card-3.jpg" alt="card-1"  className='absolute w-[80vw] h-[30vh] object-cover rounded-[20px] ml-[15vw] mt-[15vw] md:w-[35vw] md:ml-[10vw] md:mt-[10vw] md:h-[40vh]' />
+          <img src="./aboutme/card-1.jpg" alt="card-1"  className='cu--about-img-shadow absolute w-[80vw] h-[30vh] object-cover rounded-[20px] ml-[5vw] mt-[5vw] md:w-[35vw] md:ml-[2vw] md:mt-[2vw]  md:h-[40vh]'/>
+          <img src="./aboutme/card-2.jpg" alt="card-1"  className='absolute w-[80vw] h-[30vh] object-cover rounded-[20px] ml-[10vw] mt-[10vw] md:w-[35vw] md:ml-[6vw] md:mt-[6vw]  md:h-[40vh]'/>
+          <img src="./aboutme/card-3.jpg" alt="card-1"  className='absolute w-[80vw] h-[30vh] object-cover rounded-[20px] ml-[15vw] mt-[15vw] md:w-[35vw] md:ml-[10vw] md:mt-[10vw] md:h-[40vh]' />
       </div>
     </div>
   );
