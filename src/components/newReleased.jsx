@@ -4,19 +4,16 @@ import Audioplayer from './audioplayer';
 
 const musicSrc = [
   {
-    id: 's1',
     name: 'song01',
     coverImage: './music/song1.jpg',
     track: './music/song1.mp3',
   },
   {
-    id: 's2',
     name: 'song02',
     coverImage: './music/song2.jpg',
     track: './music/song2.mp3',
   },
   {
-    id: 's3',
     name: 'song03',
     coverImage: './music/song3.jpg',
     track: './music/song3.mp3',
@@ -61,15 +58,14 @@ function NewReleased() {
             currentFile={currentFile}
             setCurrentFile={setCurrentFile}
             handleTrack={handleTrack}
-          
           />
         </div>
 
         <div className="cu--grid-newReleased w-full h-[50vh] md:w-[50vw] md:h-full p-[2vh]">
           {musicSrc.map((song, i) => (
             <motion.div
-            whileTap={{scale:0.98}}
-            transition={{duration:0.1}}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.1 }}
               key={song.name}
               onClick={() => handleTrack(i)}
               className="cu--musiclist-thubnail rounded-md"

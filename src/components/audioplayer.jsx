@@ -21,6 +21,7 @@ function Audioplayer({
 }) {
   const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const audioRef = useRef(new Audio(currentFile.track));
   const inetervalRef = useRef();
@@ -45,6 +46,8 @@ function Audioplayer({
   //Effect runs when playing pausing music
   useEffect(() => {
     if (isPlaying) {
+      // audioRef.current.onload(()=> setIsLoading(true))
+
       audioRef.current.play();
       startTimer();
     } else {
@@ -54,6 +57,19 @@ function Audioplayer({
     return () => {
       audioRef.current.pause();
       clearInterval(inetervalRef.current);
+    };
+  }, [isPlaying]);
+
+  useEffect(() => {
+    const handleMusicLoading = () => {
+      setIsLoading(false);
+      console.log('audio loaded');
+    };
+
+    audioRef.current.addEventListener('canplaythrough', handleMusicLoading);
+
+    return () => {
+      audioRef.current.removeEventListener('canplaythrough', handleMusicLoading);
     };
   }, [isPlaying]);
 
@@ -142,11 +158,13 @@ function Audioplayer({
   //
   //
   //
+  console.log(audioRef.current);
   return (
     <div
       style={{ backgroundImage: `url(${currentFile.img})` }}
       className=" cu--audio-box flex flex-col items-center justify-end gap-[3vh] bg-slate-600 w-[80vw] h-[25vh] rounded-[20px] p-[5vw]  mb-[2vh] md:w-[26vw] md:h-[26vw] md:max-w-[400px] md:max-h-[400px]"
     >
+      {isLoading && <p className='text-white'>loading</p>}
       <h1 className="text-white">{musicSrc[trackIndex].name}</h1>
       <div className="flex flex-row justify-center items-end">
         <motion.button
