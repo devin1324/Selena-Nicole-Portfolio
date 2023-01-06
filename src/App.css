@@ -14,6 +14,10 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .cu--topic-gradiant {
   background: linear-gradient(270deg, #ff005c 23.14%, #3300ff 100%), #d9d9d9;
   -webkit-background-clip: text;
@@ -49,7 +53,7 @@
   gap: 2px;
 }
 
-input[type='range'] {
+#audioPlayer {
   height: 2px;
   -webkit-appearance: none;
   width: 100%;
@@ -58,7 +62,7 @@ input[type='range'] {
   transition: background 0.2s ease;
   cursor: pointer;
 }
-input[type='range']::-webkit-slider-thumb {
+#audioPlayer::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 5px;
   width: 5px;
@@ -69,7 +73,7 @@ input[type='range']::-webkit-slider-thumb {
   transition: background 0.3s ease-in-out;
 }
 
-input[type='range']::-moz-slider-thumb {
+#audioPlayer::-moz-slider-thumb {
   -webkit-appearance: none;
   height: 5px;
   width: 5px;
@@ -80,15 +84,65 @@ input[type='range']::-moz-slider-thumb {
   transition: background 0.3s ease-in-out;
 }
 
-input[type='range']::-webkit-slider-runnable-track {
+#audioPlayer::-webkit-slider-runnable-track {
   -webkit-appearance: none;
   box-shadow: 0px 0px 6px 1px rgba(245, 235, 235, 0.23);
   border: none;
   background: transparent;
-  /* filter: drop-shadow(0 0 0.2rem #e4c3c9); */
+  filter: drop-shadow(0 0 0.2rem #e4c3c9);
 }
 
 .cu--musiclist-thubnail {
   background-position: center center;
   background-size: cover;
+}
+
+.cu--vedioPlayer-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  place-items: center;
+}
+
+.cu--vedioPlayer-bar {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.cu--vedioPlayer-element {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.cu--vedioPlayer-button {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+#vedioPlayer {
+  height: 3px;
+  -webkit-appearance: none;
+  width: 78%;
+  margin-bottom: 1vh;
+  border-radius: 3px;
+  background: #ebd8db;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+#vedioPlayer::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: #a77b83;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background 0.3s ease-in-out;
+}
+
+#vedioPlayer::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: 0px 0px 6px 1px rgba(245, 235, 235, 0.23);
+  border: none;
+  background: transparent;
+  filter: drop-shadow(0 0 0.2rem #e4c3c9);
 }

@@ -46,7 +46,7 @@ function Navbar() {
             <li>
               <a
                 href="#"
-                className="text-[black] border border-white bg-white px-[2.5vw] rounded-full"
+                className="text-[black] border border-white bg-white px-[2.5vw] py-[0.3vw] rounded-full"
               >
                 Home
               </a>
@@ -54,7 +54,7 @@ function Navbar() {
             <li>
               <a
                 href="#"
-                className="text-white border-2 border-[#FFC5DA] px-[2.5vw] rounded-full"
+                className="text-white border-2 border-[#FFC5DA] px-[2vw] py-[0.3vw] rounded-full"
               >
                 About me
               </a>
@@ -62,7 +62,7 @@ function Navbar() {
             <li>
               <a
                 href="#"
-                className="text-white  border-2 border-[#FFC5DA] px-[2.5vw] rounded-full"
+                className="text-white  border-2 border-[#FFC5DA] px-[2.5vw] py-[0.3vw] rounded-full"
               >
                 Music
               </a>
@@ -70,7 +70,7 @@ function Navbar() {
             <li>
               <a
                 href="#"
-                className="text-white  border-2 border-[#FFC5DA] px-[2.5vw] rounded-full"
+                className="text-white  border-2 border-[#FFC5DA] px-[2.5vw] py-[0.3vw] rounded-full"
               >
                 Video
               </a>

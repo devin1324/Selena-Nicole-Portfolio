@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <Hero />
-      <div className="bg-[url('/public/common/bg.jpg')] w-full h-[300vh]">
+      <div className="bg-[url('/public/common/bg.jpg')] w-full h-[300vh] flex flex-col  items-center">
         <AboutMe />
         <NewReleased />
       </div>

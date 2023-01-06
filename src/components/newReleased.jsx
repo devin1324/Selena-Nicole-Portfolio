@@ -1,6 +1,11 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Audioplayer from './audioplayer';
+import VideoPlayer from './videoPlayer';
+import {
+  IoPlaySkipBackCircleSharp,
+  IoPlaySkipForwardCircle,
+} from 'react-icons/io5';
 
 const musicSrc = [
   {
@@ -45,9 +50,10 @@ function NewReleased() {
   console.log(currentFile, trackIndex);
 
   return (
-    <div className="w-full h-[200vh] ">
-      <div className="w-full h-[100vh] flex flex-col md:flex-row">
-        <div className="w-full h-[50vh] md:w-[50vw] md:h-full  flex flex-col justify-end items-center gap-[2vh] md:justify-center">
+    <div className="w-full h-[200vh]  md:w-[70vw] md:min-w-[768px] ">
+      {/* Audio */}
+      <div className="w-full h-[100vh] flex flex-col md:flex-row items-center">
+        <div className="w-full h-[50vh] md:w-[50%] md:h-full  flex flex-col justify-end items-center gap-[2vh] md:justify-center">
           <h1 className="cu--topic-gradiant cu-font---anaheim-Regular text-[10vw] text-center md:text-[3vw]">
             NEW RELEASED
           </h1>
@@ -61,7 +67,7 @@ function NewReleased() {
           />
         </div>
 
-        <div className="cu--grid-newReleased w-full h-[50vh] md:w-[50vw] md:h-full p-[2vh]">
+        <div className="cu--grid-newReleased w-full h-[50vh] md:w-[50%] md:h-[60%] p-[2vh] ">
           {musicSrc.map((song, i) => (
             <motion.div
               whileTap={{ scale: 0.98 }}
@@ -80,6 +86,18 @@ function NewReleased() {
               </motion.div>
             </motion.div>
           ))}
+        </div>
+      </div>
+
+      {/* Vedio */}
+
+      <div className="md:w-[70vw] md:min-w-[768px] h-[100vh] flex flex-row  items-center border overflow-x-scroll">
+      <IoPlaySkipForwardCircle size={'2rem'} />
+      <IoPlaySkipBackCircleSharp size={'2rem'} />
+        <div className='flex flex-row gap-[1vw] '>
+          <VideoPlayer />
+          <VideoPlayer />
+          <VideoPlayer />
         </div>
       </div>
     </div>

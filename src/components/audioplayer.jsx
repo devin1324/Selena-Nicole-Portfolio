@@ -145,7 +145,7 @@ function Audioplayer({
   return (
     <div
       style={{ backgroundImage: `url(${currentFile.img})` }}
-      className=" cu--audio-box flex flex-col items-center justify-end gap-[3vh] bg-slate-600 w-[80vw] h-[25vh] rounded-[20px] p-[5vw]  mb-[2vh] md:w-[26vw] md:h-[26vw] md:max-w-[400px] md:max-h-[400px]"
+      className=" cu--audio-box flex flex-col items-center justify-end gap-[3vh] bg-slate-600 w-[80vw] h-[25vh] rounded-[20px] p-[5vw]  mb-[2vh] md:w-[26vw] md:h-[46vh] md:max-w-[400px] md:max-h-[500px] md:min-w-[300px] md:min-h-[300px]"
     >
       <h1 className="text-white">{musicSrc[trackIndex].name}</h1>
       <div className="flex flex-row justify-center items-end">
@@ -182,6 +182,7 @@ function Audioplayer({
         </motion.button>
       </div>
       <input
+      id='audioPlayer'
         type="range"
         value={trackProgress}
         step="1"
