@@ -2,6 +2,7 @@ import Nav from './components/navbar';
 import Hero from './components/hero';
 import AboutMe from './components/aboutMe';
 import NewReleased from './components/newReleased';
+import Footer from './components/footer';
 
 import './App.css';
 
@@ -14,6 +15,7 @@ function App() {
         <NewReleased />
       </div>
       <Nav />
+      <Footer />
     </div>
   );
 }

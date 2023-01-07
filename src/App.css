@@ -7,11 +7,15 @@
   font-family: Anaheim-Regular;
   src: url(/src/assets/fonts/Anaheim-Regular.ttf);
 }
-
+@font-face {
+  font-family: Anthares-Demo;
+  src: url(/src/assets/fonts/Anthares-Demo.ttf);
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -158,3 +162,22 @@ body {
 .cu--video-div {
   grid-area: 1 / 1 / 2 / 2;
 }
+
+.cu--thankyou-text {
+  background: linear-gradient(270deg, #fd8db5 23.14%, #c0b0ff 100%), #d9d9d9;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-family: Anthares-Demo;
+}
+
+.cu--navbar-text {
+  background: linear-gradient(270deg, #fd8db5 23.14%, #c0b0ff 100%), #d9d9d9;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-family: Anthares-Demo;
+}
+

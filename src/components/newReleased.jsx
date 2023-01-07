@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Audioplayer from './audioplayer';
 import VideoPlayer from './videoPlayer';
@@ -46,7 +46,6 @@ function NewReleased() {
   const [currentVedio, setCurrentVedio] = useState(0);
 
   const vedioContainerWidth = useRef(33.333); //Width of a singal vedio element in vw
-  const numberOfVedios = useRef(3); // No. of vedio elements
 
   //
   //
@@ -85,8 +84,6 @@ function NewReleased() {
     }
   };
 
-
-
   //
   //
   //
@@ -99,7 +96,10 @@ function NewReleased() {
   return (
     <div className="w-full h-[200vh]  md:w-[70vw] md:min-w-[768px] ">
       {/* Audio */}
-      <div className="w-full h-[100vh] flex flex-col md:flex-row items-center">
+      <div
+        id="music"
+        className="w-full h-[100vh] flex flex-col md:flex-row items-center"
+      >
         <div className="w-full h-[50vh] md:w-[50%] md:h-full  flex flex-col justify-end items-center gap-[2vh] md:justify-center">
           <h1 className="cu--topic-gradiant cu-font---anaheim-Regular text-[10vw] text-center md:text-[3vw]">
             NEW RELEASED
@@ -138,7 +138,7 @@ function NewReleased() {
 
       {/* Vedio */}
 
-      <div className="cu--video-container relative">
+      <div id="vedio" className="cu--video-container relative">
         <div className="cu--video-div md:w-[70vw] md:min-w-[768px] h-[100vh] flex flex-row  items-center  overflow-hidden z-100">
           <motion.div
             className="flex flex-col gap-[5vh] md:gap-[0vw] md:flex-row md:flex-nowrap z-100"
