@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 function Hero() {
   return (
-    <div id='home' className=" bg-[url('/public/hero/bg.png')] h-[100vh]  bg-center overflow-hidden ">
+    <div id='home' className=" bg-[url('/hero/bg.png')] h-[100vh]  bg-center overflow-hidden ">
       <div className=" h-full flex flex-col justify-start items-center pt-[20vh] md:justify-center md:items-start  md:pt-[10vh] md:pl-[10vw] ">
         <img src="./hero/SelenaNicole.png" className="w-[65vw] md:w-[20vw] md:min-w-[400px]" />
 
