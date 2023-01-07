@@ -146,3 +146,15 @@ body {
   background: transparent;
   filter: drop-shadow(0 0 0.2rem #e4c3c9);
 }
+
+.cu--video-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  place-items: center;
+}
+.cu--video-div {
+  grid-area: 1 / 1 / 2 / 2;
+}

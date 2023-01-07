@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { FaPlayCircle, FaPauseCircle } from 'react-icons/fa';
-
+import { BiPlayCircle, BiPauseCircle } from 'react-icons/bi';
 import { motion } from 'framer-motion';
 
 function VideoPlayer() {
@@ -47,7 +46,6 @@ function VideoPlayer() {
     <div className="md:w-[70vw] md:min-w-[768px]  justify-center cu--vedioPlayer-container">
       <video
         ref={videoRef}
-        // onTimeUpdate={handleProgress}
         className=" w-[80%] rounded-[10px] self-center cu--vedioPlayer-element z-100 relative"
       >
         <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
@@ -59,9 +57,9 @@ function VideoPlayer() {
         className="cu--newReleased-button-shadow cu--vedioPlayer-button origin-center self-end justify-self-start ml-[11%] mb-[3%]  z-100 relative"
       >
         {isPlaying ? (
-          <FaPauseCircle size={'2rem'} />
+          <BiPauseCircle  size={'2rem'} />
         ) : (
-          <FaPlayCircle size={'2rem'} />
+          <BiPlayCircle size={'2rem'} />
         )}
       </motion.button>
 

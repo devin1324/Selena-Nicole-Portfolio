@@ -140,8 +140,6 @@ function Audioplayer({
   //
   //
   //
-  //
-  console.log(audioRef.current);
   return (
     <div
       style={{ backgroundImage: `url(${currentFile.img})` }}

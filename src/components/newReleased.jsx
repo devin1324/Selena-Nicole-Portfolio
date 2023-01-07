@@ -1,11 +1,11 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
 import Audioplayer from './audioplayer';
 import VideoPlayer from './videoPlayer';
 import {
-  IoPlaySkipBackCircleSharp,
-  IoPlaySkipForwardCircle,
-} from 'react-icons/io5';
+  BsFillArrowLeftCircleFill,
+  BsFillArrowRightCircleFill,
+} from 'react-icons/bs';
 
 const musicSrc = [
   {
@@ -25,13 +25,33 @@ const musicSrc = [
   },
 ];
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 function NewReleased() {
   const [trackIndex, setTrackIndex] = useState(0);
   const [currentFile, setCurrentFile] = useState({
     track: './music/song1.mp3',
     img: './music/song1.jpg',
   });
+  const [currentVedio, setCurrentVedio] = useState(0);
 
+  const vedioContainerWidth = useRef(33.333); //Width of a singal vedio element in vw
+  const numberOfVedios = useRef(3); // No. of vedio elements
+
+  //
+  //
+  //
+  //
   const handleTrack = (i) => {
     setTrackIndex(i);
 
@@ -46,9 +66,36 @@ function NewReleased() {
       ...updateFile,
     }));
   };
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  const handlePrevVedio = () => {
+    if (currentVedio / vedioContainerWidth.current > 0) {
+      setCurrentVedio(currentVedio - vedioContainerWidth.current);
+    }
+  };
 
-  console.log(currentFile, trackIndex);
+  const handleNextVedio = () => {
+    if (currentVedio / vedioContainerWidth.current < 2) {
+      setCurrentVedio(currentVedio + vedioContainerWidth.current);
+    }
+  };
 
+
+
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
   return (
     <div className="w-full h-[200vh]  md:w-[70vw] md:min-w-[768px] ">
       {/* Audio */}
@@ -91,13 +138,33 @@ function NewReleased() {
 
       {/* Vedio */}
 
-      <div className="md:w-[70vw] md:min-w-[768px] h-[100vh] flex flex-row  items-center border overflow-x-scroll">
-      <IoPlaySkipForwardCircle size={'2rem'} />
-      <IoPlaySkipBackCircleSharp size={'2rem'} />
-        <div className='flex flex-row gap-[1vw] '>
-          <VideoPlayer />
-          <VideoPlayer />
-          <VideoPlayer />
+      <div className="cu--video-container relative">
+        <div className="cu--video-div md:w-[70vw] md:min-w-[768px] h-[100vh] flex flex-row  items-center  overflow-hidden z-100">
+          <motion.div
+            className="flex flex-col gap-[5vh] md:gap-[0vw] md:flex-row md:flex-nowrap z-100"
+            initial={{ x: 0 }}
+            animate={{ x: `-${currentVedio}%` }}
+            transition={{ duration: 1 }}
+          >
+            <VideoPlayer />
+            <VideoPlayer />
+            <VideoPlayer />
+          </motion.div>
+        </div>
+
+        <div className="cu--video-div relative z-200 w-full  justify-between hidden md:flex px-[2vw]">
+          <button
+            onClick={handlePrevVedio}
+            className="cu--newReleased-button-shadow "
+          >
+            <BsFillArrowLeftCircleFill size={'2.5rem'} />
+          </button>
+          <button
+            onClick={handleNextVedio}
+            className="cu--newReleased-button-shadow "
+          >
+            <BsFillArrowRightCircleFill size={'2.5rem'} />
+          </button>
         </div>
       </div>
     </div>
