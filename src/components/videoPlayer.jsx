@@ -80,7 +80,7 @@ function VideoPlayer({src,name}) {
         onKeyUp={onScrubEnd}
       />
 
-      <p className='mt-5 text-[120%]'>{name}</p>
+      <p className='mt-5 text-[120%] anaheim-Regular'>{name}</p>
     </div>
   );
 }

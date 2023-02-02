@@ -21,6 +21,9 @@
 body {
   overflow-x: hidden;
 }
+.anaheim-Regular{
+  font-family: Anaheim-Regular;
+}
 
 .cu--topic-gradiant {
   background: linear-gradient(270deg, #ff005c 23.14%, #3300ff 100%), #d9d9d9;
