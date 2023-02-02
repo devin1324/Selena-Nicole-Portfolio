@@ -159,7 +159,7 @@ function NewReleased() {
                 whileTap={{ opacity: 1 }}
                 className="opacity-0 backdrop-blur-sm w-full h-full backdrop-opacity-90  flex flex-col justify-center items-center"
               >
-                <h2 className="text-white">{song.name}</h2>
+                <h2 className="text-white text-[150%]">{song.name}</h2>
               </motion.div>
             </motion.div>
           ))}
