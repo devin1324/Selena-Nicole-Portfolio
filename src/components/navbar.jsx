@@ -61,7 +61,7 @@ function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-      <nav className="h-[10vh] w-screen  px-[10vw] flex  items-center backdrop-filter backdrop-blur-lg bg-opacity-30 fixed top-0">
+      <nav className="h-[10vh] w-screen  px-[10vw] flex  items-center backdrop-filter backdrop-blur-lg bg-opacity-30 fixed top-0 bg-slate-700">
         <div className=" w-full flex justify-end mt-[2vh]">
           {/*For mobile screens  */}
           <button

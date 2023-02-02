@@ -9,19 +9,49 @@ import {
 
 const musicSrc = [
   {
-    name: 'song01',
+    name: 'Before You Go',
     coverImage: './music/song1.jpg',
     track: './music/song1.mp3',
   },
   {
-    name: 'song02',
+    name: 'Walk Me Home',
     coverImage: './music/song2.jpg',
     track: './music/song2.mp3',
   },
   {
-    name: 'song03',
+    name: 'Beautiful',
     coverImage: './music/song3.jpg',
     track: './music/song3.mp3',
+  },
+  {
+    name: 'Hello',
+    coverImage: './music/song4.jpg',
+    track: './music/song4.mp3',
+  },
+  {
+    name: 'Lonely',
+    coverImage: './music/song5.jpg',
+    track: './music/song5.mp3',
+  },
+  {
+    name: 'Lauv',
+    coverImage: './music/song6.jpg',
+    track: './music/song6.mp3',
+  },
+  {
+    name: 'Together',
+    coverImage: './music/song7.jpg',
+    track: './music/song7.mp3',
+  },
+  {
+    name: 'No Time To Die',
+    coverImage: './music/song8.jpg',
+    track: './music/song8.mp3',
+  },
+  {
+    name: 'Still Learning',
+    coverImage: './music/song9.jpg',
+    track: './music/song9.mp3',
   },
 ];
 
@@ -146,9 +176,9 @@ function NewReleased() {
             animate={{ x: `-${currentVedio}%` }}
             transition={{ duration: 1 }}
           >
-            <VideoPlayer />
-            <VideoPlayer />
-            <VideoPlayer />
+            <VideoPlayer src="./video/Impossible.mp4" name="Impossible"/>
+            <VideoPlayer src="./video/Skyward.mp4" name="Skyward"/>
+            <VideoPlayer src="./video/Someone You Loved.mp4" name="Someone You Loved"/>
           </motion.div>
         </div>
 

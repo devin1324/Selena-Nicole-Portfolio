@@ -77,10 +77,10 @@ function Footer() {
             <IoLocationSharp size={'2rem'} />
             <p>Colombo, Sri Lanka</p>
           </span>
-          <p>Email : thecreativocode@gmail.com</p>
+          <p>Email : devin_v@hotmail.com</p>
         </div>
         <div  className='flex items-end md:text-[90%] text-[70%]'>
-          <p>Copyright 2022 © Creativo Code. All rights reserved.</p>
+          <p>Designed and Developed by DEV9</p>
         </div>
       </footer>
     </>

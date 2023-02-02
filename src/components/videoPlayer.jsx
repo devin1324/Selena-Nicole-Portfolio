@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { BiPlayCircle, BiPauseCircle } from 'react-icons/bi';
 import { motion } from 'framer-motion';
 
-function VideoPlayer() {
+function VideoPlayer({src,name}) {
   const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -48,7 +48,7 @@ function VideoPlayer() {
         ref={videoRef}
         className=" w-[80%] rounded-[10px] self-center cu--vedioPlayer-element z-100 relative"
       >
-        <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
+        <source src={src} />
       </video>
 
       <motion.button
@@ -79,6 +79,8 @@ function VideoPlayer() {
         onMouseUp={onScrubEnd}
         onKeyUp={onScrubEnd}
       />
+
+      <p className='mt-5 text-[120%]'>{name}</p>
     </div>
   );
 }
